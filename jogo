@@ -1,0 +1,136 @@
+import java.util.Scanner;
+
+public class JogoDaVelha {
+    public static void main(String[] args) {
+        Campo[][] velha = new Campo[3][3];
+        char simboloAtual = 'X';
+        boolean game = true;
+        String vitoria = "";
+        Scanner scan = new Scanner(System.in);
+
+        while (game) {
+            desenhaJogo(velha);
+            vitoria = verificaVitoria(velha);
+            if (!vitoria.equals("")) {
+                System.out.printf("Jogador %s venceu%n", vitoria);
+                break;
+            }
+            try {
+
+                import java.util.Scanner;
+
+public class JogoDaVelha {
+    private static final char VAZIO = '-';
+    private static final char X = 'X';
+    private static final char O = 'O';
+    private char[][] tabuleiro;
+    private char jogadorAtual;
+
+    public JogoDaVelha() {
+        tabuleiro = new char[3][3];
+        jogadorAtual = X;
+        inicializarTabuleiro();
+    }
+
+    public void inicializarTabuleiro() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                tabuleiro[i][j] = VAZIO;
+            }
+        }
+    }
+
+    public void alterarJogador() {
+        if (jogadorAtual == X) {
+            jogadorAtual = O;
+        } else {
+            jogadorAtual = X;
+        }
+    }
+
+    public void imprimirTabuleiro() {
+        for (int i = 0; i < 3; i++) {
+            System.out.println();
+            for (int j = 0; j < 3; j++) {
+                if (j == 0) {
+                    System.out.print("| ");
+                }
+                System.out.print(tabuleiro[i][j] + " | ");
+            }
+        }
+        System.out.println();
+    }
+
+    public boolean jogada(int linha, int coluna) {
+        if (linha >= 0 && coluna >= 0 && linha < 3 && coluna < 3) {
+            if (tabuleiro[linha][coluna] == VAZIO) {
+                tabuleiro[linha][coluna] = jogadorAtual;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        JogoDaVelha jogo = new JogoDaVelha();
+        Scanner scanner = new Scanner(System.in);
+        int linha, coluna;
+        boolean jogadaValida;
+
+        do {
+            jogo.imprimirTabuleiro();
+            jogadaValida = false;
+
+            do {
+                System.out.println("Jogador " + jogo.jogadorAtual + ", digite a linha (0, 1 ou 2):");
+                linha = scanner.nextInt();
+                System.out.println("Jogador " + jogo.jogadorAtual + ", digite a coluna (0, 1 ou 2):");
+                coluna = scanner.nextInt();
+
+                jogadaValida = jogo.jogada(linha, coluna);
+                if (!jogadaValida) {
+                    System.out.println("Jogada inválida. Tente novamente.");
+                }
+            } while (!jogadaValida);
+
+            jogo.alterarJogador();
+        } while (true);  // Substitua por uma condição que verifique se o jogo terminou
+    }
+}
+
+                
+
+
+            } catch (Exception e) {
+                System.out.println("Erro");
+            }
+        }
+        System.out.println("Fim de Jogo");
+    }
+
+    public static void desenhaJogo(Campo[][] velha) {
+        // limparTela();
+        System.out.println("       0    1    2");
+        System.out.printf("0  %c / %c / %c %n", velha[0][0].getSimbolo(), velha[0][1].getSimbolo(), velha[0][2].getSimbolo());
+        System.out.println("       ------------");
+        System.out.printf("1  %c / %c / %c %n", velha[1][0].getSimbolo(), velha[1][1].getSimbolo(), velha[1][2].getSimbolo());
+        System.out.println("       ------------");
+        System.out.printf("2  %c / %c / %c %n", velha[2][0].getSimbolo(), velha[2][1].getSimbolo(), velha[2][2].getSimbolo());
+    }
+
+    public static void limparTela() {
+        for (int cont = 0; cont < 200; cont++) {
+            System.out.println("");
+        }
+    }
+
+    public static boolean verificarJogada(Campo[][] velha, int p[], char simboloAtual) {
+        // Adicione o código para verificar a jogada aqui...
+        return false;
+    }
+
+    public static String verificaVitoria(Campo[][] velha) {
+        // Adicione o código para verificar a vitória aqui...
+        return "";
+    }
+}

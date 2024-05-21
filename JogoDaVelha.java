@@ -18,7 +18,18 @@ public class JogoDaVelha{
                 System.out.println("Jogador %s venceu%n", vitoria);
                 braek;
              }
+             try{
+
+
+
+
+             }catch(Exception e)[{
+                System.out.printf("Erro");
+             }
+                
         }
+        System.out.printf("Fim de Jogo");
+
 
     }
     
@@ -30,6 +41,17 @@ public class JogoDaVelha{
         System.out.printf("1  %c / %c / %c %c",velha[1][0].getSimbolo(),velha[1][1].getSimbolo(),velha[1][2].getSimbolo);
         System.out.println("       ------------");
         System.out.printf("2  %c / %c / %c %c",velha[2][0].getSimbolo(),velha[2][1].getSimbolo(),velha[2][2].getSimbolo);
+    }
+
+    public void limparTela(){
+        for(int cont=0;cont<200;cont++){
+            System.out.println("");
+
+        }
+    }
+
+    public void Boolean verificarjogada(Campo[][] velha,int p[],char simboloAtual){
+
     }
 
     public static Sting verificaVitoria(Campo[][] velha){
